@@ -61,6 +61,18 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+            #branch-id
+            {
+                font-size:1rem;                
+                color:darkred;
+            }
+            #branch-changes
+            {
+                font-size:1rem;
+                text-align:left;
+                max-width:500px;
+                margin:20px auto;
+            }
         </style>
     </head>
     <body>
@@ -82,6 +94,14 @@
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
+                </div>
+                <div id="branch-id">
+                    branch : b1
+                </div>
+                <div id="branch-changes">
+                    <ul>
+                        <li>b1 : Добавил свои надписи на вью welcome</li>
+                    </ul>                    
                 </div>
 
                 <div class="links">

@@ -1,0 +1,16 @@
+1. Создать пустой проект Laravel
+composer create-project --prefer-dist laravel/laravel simple-Laravel-app
+
+2. Зайти в папку [simple-Laravel-app], создать в ней локальный git-репозиторий
+cd simple-Laravel-app
+git init
+git config --global user.name 'Denis Abidov'
+git config --global user.email 'den-abidov@yandex.ru'
+git add .
+git commit -m "Создал новый и пока пустой Laravel-проект."
+git status
+
+Ветка master
+
+Создам ветку b1 и переключусь на неё
+git checkout -b b1
