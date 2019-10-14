@@ -12,5 +12,35 @@ git status
 
 Ветка master
 
+------------------------------------
 Создам ветку b1 и переключусь на неё
 git checkout -b b1
+
+Добавил свои надписи на вью welcome.
+git add .
+git commit -m "Добавил свои надписи на вью welcome."
+
+------------------------------------
+Создам ветку b2 и переключусь на неё
+git checkout -b b2
+
+Установил node modules
+npm install
+
+Создал
+  views/news.blade.php
+  sass/news.scss
+
+Создал
+  sass/welcome.scss
+  и вынес туда стили
+
+Прописал шрифт в sass/app.scss
+
+Прописал app.scss, welcome, news.scss в webpack.mix
+
+Запустил отслеживание изменений
+npm run watch
+
+
+  

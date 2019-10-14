@@ -1,1 +1,15 @@
-//
+// шрифт
+
+@font-face 
+{
+  font-family: "RobotoFont"; 
+  src: url("https://fonts.googleapis.com/css?family=Roboto") format("ttf");
+  src: url("https://fonts.googleapis.com/css?family=Roboto+Slab&display=swap"); 
+  font-display: fallback; 
+}
+
+body, h1, h2, h3, h4, h5, h6, p, a, li, button, label
+{
+  font-family: "RobotoFont", sans-serif;
+  color:rgb(75,75,75);
+}
