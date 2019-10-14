@@ -19,7 +19,7 @@
   <section id="news-block">
     <p>Список новостей:</p>
     <ul>
-      <li></li>
+      <li>Создал новую ветку b4.</li>
     </ul>
   </section>
   <p class="center"><a href="/">< Назад</a></p>
