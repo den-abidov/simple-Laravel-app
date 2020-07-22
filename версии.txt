@@ -48,4 +48,15 @@ npm run watch
 ------------------------------------
 Тестовая правка на локальной машине Ubuntu@NUC.
 
-  
+2020.07.22 b4 работа в Windows 10
+Создал таблицу events, содержащую описание событий.
+Для этого создал :
+класс Models\Event,
+миграцию database\migrations\create_events_table,
+фабрику database\factories\Factories\EventFactory,
+сидер database\seeds\EventsTableSeeder,
+
+
+
+
+
