@@ -13,6 +13,11 @@ class Event extends Model
     const EVENT_REPORT = 'report';
 
     /**
+     * @var bool
+     */
+    public $timestamps = false;
+
+    /**
      * The attributes that should be cast.
      *
      * @var array

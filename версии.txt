@@ -56,6 +56,16 @@ npm run watch
 фабрику database\factories\Factories\EventFactory,
 сидер database\seeds\EventsTableSeeder,
 
+2020.07.22 b5
+1) Добавил дату в таблицу events и упростил поле event_value.
+От сложной структуры значения и запроса :
+$events = \App\Models\Event::all()->where('event_name','kit_paid')->where('event_value',["event_name"=>"kit_paid", "event_value"=>["kit_id"=>1]])->count();
+Перешёл к простой :
+$events = \App\Models\Event::all()->where('event_name','kit_paid')->where('event_value',["kit_id"=>1])->count();
+
+2) Также добавил контроллер ShowChart.php и views/chart.blade.php
+
+
 
 
 

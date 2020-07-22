@@ -27,6 +27,8 @@ $factory->define(Event::class, function (Faker $faker) {
         ['activity'=> $faker->randomElement($activities), 'value' => $random_boolean]
     ];
 
+    $date = $faker->dateTimeBetween('-30 days', 'now', null)->format('Y-m-d');
+
     $event_name = $faker->randomElement($events);
     $event_value = null;
     switch($event_name){
@@ -37,10 +39,12 @@ $factory->define(Event::class, function (Faker $faker) {
         case Event::EVENT_REPORT: $event_value = $faker->randomElement($report_values); break;
     }
 
-    $event = ['event_name'=>$event_name, 'event_value'=>$event_value];
+    // $event = ['event_name'=>$event_name, 'event_value'=>$event_value];
+    // $event_value = ['event_value'=>$event_value];
 
     return [
+        'date' => $date,
         'event_name' => $event_name,
-        'event_value' => $event,
+        'event_value' => $event_value,
     ];
 });
