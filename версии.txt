@@ -65,6 +65,27 @@ $events = \App\Models\Event::all()->where('event_name','kit_paid')->where('event
 
 2) Также добавил контроллер ShowChart.php и views/chart.blade.php
 
+2020.07.22 b6
+Начинаю работать с пакетом Laravel Charts. Сайт : https://charts.erik.cat/
+Чтобы его использовать, проапгрейдил Laravel с версии 6 на версию 7.
+Чтобы правильно провести апргрейд, читай здесь :
+https://laravel.com/docs/7.x/upgrade
+И здесь (выскакивает ошибка связанная с апгрейдом Symfony. Здесь расписано как её победить) :
+https://stackoverflow.com/questions/50840960/script-php-artisan-packagediscover-handling-the-post-autoload-dump-event-retur
+
+Установил пакет Laravel Charts:
+$ composer require consoletvs/charts "7.*"
+
+Создал пробный график :
+$ php artisan make:chart SampleChart
+
+Зарегистрировал в AppServiceProvider.php :
+public function boot(Charts $charts)
+{
+        $charts->register([
+            \App\Charts\SampleChart::class
+        ]);
+}
 
 
 

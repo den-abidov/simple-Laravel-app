@@ -20,4 +20,4 @@ Route::get('/news', function () {
 });
 
 Route::get('/chart', $pathToControllers.'\ShowChart@showPage');
-
+Route::get('/test', $pathToControllers.'\Test@test');
