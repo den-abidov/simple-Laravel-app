@@ -34,6 +34,16 @@ class Statistics
     }
 
     /**
+     * @param string $start_date
+     * @param string $end_date
+     * @return array даты из таблицы, отсортированные в порядке возрастания
+     */
+    public static function getDatesBetween(string $start_date, string $end_date):array
+    {
+        return collect(\App\Models\Event::get('date')->sort())->unique()->whereBetween('date',[$start_date, $end_date])->pluck('date')->toArray();
+    }
+
+    /**
      * @param int $kit_id
      * @return int число всех пакетов в таблице с указанным $kit_id
      */
@@ -57,6 +67,21 @@ class Statistics
      * @return array массив количества пакетов с $kit_id, на каждую дату, сортированные по датам
      */
     public static function getKits(int $kit_id):array
+    {
+        $dates = self::getDates();
+        $result = [];
+        foreach($dates as $date)
+        {
+            $result[] = self::countKitsForDate($kit_id, $date);
+        }
+        return $result;
+    }
+
+    /**
+     * @param int $kit_id
+     * @return array массив количества пакетов с $kit_id, на каждую дату, сортированные по датам
+     */
+    public static function getKitsBetweenDates(int $kit_id, string $startDate, string $endDate):array
     {
         $dates = self::getDates();
         $result = [];

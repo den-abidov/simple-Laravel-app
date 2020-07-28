@@ -20,4 +20,6 @@ Route::get('/news', function () {
 });
 
 Route::get('/chart', $pathToControllers.'\ShowChart@showPage');
+Route::get('/date-range-picker', $pathToControllers.'\DateRangePicker@showPage');
+Route::get('/date-range-picked', $pathToControllers.'\DateRangePicker@update');
 Route::get('/test', $pathToControllers.'\Test@test');

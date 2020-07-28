@@ -17,7 +17,8 @@ class Test extends Controller
         // $result = Statistics::countAllKits(3);
         // $result = Statistics::countKitsForDate(1, "2020-07-03");
         // $result = Statistics::getDates();
-        $result = Statistics::getKits(1);
+        // $result = Statistics::getKits(1);
+        $result = Statistics::getDatesBetween('2020-07-02', '2020-07-11');
         dd($result);
     }
 }

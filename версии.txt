@@ -87,6 +87,8 @@ public function boot(Charts $charts)
         ]);
 }
 
+2020.07.29 b7 Работа с JS-библиотекой Date Range Picker.
+Создал страницу date_range_picker.blade.php
 
 
 
