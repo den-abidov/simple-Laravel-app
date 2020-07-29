@@ -90,6 +90,8 @@ public function boot(Charts $charts)
 2020.07.29 b7 Работа с JS-библиотекой Date Range Picker.
 Создал страницу date_range_picker.blade.php
 
-
+2020.07.29 b7 Работа с JS-библиотекой Date Range Picker + Axios
+Не получается легко передать данные из JS в Laravelовский контроллер.
+Не стал дальше разбираться. "Забил".
 
 

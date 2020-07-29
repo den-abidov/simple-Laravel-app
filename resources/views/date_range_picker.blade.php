@@ -37,13 +37,22 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script type="text/javascript">
+
+        "use strict";
+        //const axios = require('axios');
+
+        // работа с Date Range Picker
+
         $(function() {
 
-            "use strict";
 
             let start = moment().subtract(29, "days");
             let end = moment();
             let dateFormat = "DD MMMM";//"YYYY-MM-D";
+
+            let startDate = start.format(dateFormat);
+            let endDate = end.format(dateFormat);
+            $("#reportrange span").html(startDate + " - " + endDate);
 
             function cb(start, end)
             {
@@ -53,6 +62,8 @@
                 $("#reportrange span").html(startDate + " - " + endDate);
                 console.log("Начальная дата : "+startDate);
                 console.log("Конечная дата : "+endDate);
+                // window.location.href = '/date-range-picker?start_date='+startDate+'&end_date='+endDate;
+                sendAxiosRequest();
             }
 
             $("#reportrange").daterangepicker({
@@ -70,7 +81,28 @@
 
             cb(start, end);
 
+
         });
+        function sendAxiosRequest()
+        {
+            axios.post('/date-selected')
+                .then(function (response)
+                {
+                    // handle success
+                    console.log(response);
+                    console.log("Axios: Запрос успешно отправлен.");
+                    //window.location.href = '/date-range-picker?start_date='+startDate+'&end_date='+endDate;
+                })
+                .catch(function (error)
+                {
+                    // handle error
+                    console.log(error);
+                })
+                .then(function ()
+                {
+                    // always executed
+                });
+        }
     </script>
 </main>
 </body>

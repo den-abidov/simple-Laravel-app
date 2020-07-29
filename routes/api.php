@@ -16,3 +16,6 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+$pathToControllers = '\App\Http\Controllers';
+Route::post('/date-selected', $pathToControllers.'\DateRangePicker@updatePage');
